@@ -1,4 +1,1 @@
-#include <stdio.h>
 
-main(){
-}
