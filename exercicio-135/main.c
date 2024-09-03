@@ -4,7 +4,6 @@ int main() {
     int i, j;
     double matriz[3][3]; // Matriz 3x3
     double soma = 0.0; // Variável para armazenar a soma dos elementos abaixo da diagonal principal
-
     // Leia a matriz 3x3
     for (i = 0; i < 3; i++) {
         for (j = 0; j < 3; j++) {
@@ -12,7 +11,6 @@ int main() {
             scanf("%lf", &matriz[i][j]);
         }
     }
-
     // Calcula a soma dos elementos abaixo da diagonal principal
     for (i = 0; i < 3; i++) {
         for (j = 0; j < 3; j++) {
@@ -21,7 +19,6 @@ int main() {
             }
         }
     }
-
     // Mostra o resultado
     printf("Soma dos elementos abaixo da diagonal principal: %.2f\n", soma);
 
