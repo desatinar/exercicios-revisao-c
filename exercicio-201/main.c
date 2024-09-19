@@ -38,7 +38,7 @@ int main(){
     lerSenha(senhaLogin);
 
     if (strcmp(nomeUsuario, nomeLogin) == 0 && strcmp(senhaUsuario, senhaLogin) == 0){
-        printf("Acesso liberado\n");
+        printf("Ok\n");
     } else{
         printf("Acesso negado\n");
     }
