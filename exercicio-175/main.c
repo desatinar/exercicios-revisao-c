@@ -1,43 +1,32 @@
 #include <stdio.h>
-#define T 3
 
-void preencherMatriz(int matriz[T][T]) {
-    printf("Digite os elementos da matriz:\n");
-    for (int i = 0; i < T; i++) {
-        for (int j = 0; j < T; j++) {
-            printf("Elemento [%d][%d]: ", i, j);
-            scanf("%d", &matriz[i][j]);
+int encontrarMaior(int arr[], int tamanho) {
+    int maior = arr[0];
+    for (int i = 1; i < tamanho; i++) {
+        if (arr[i] > maior) {
+            maior = arr[i];
         }
     }
-}
-void iMatriz(int matriz[T][T]) {
-    printf("Matriz:\n");
-    for (int i = 0; i < T; i++) {
-        for (int j = 0; j < T; j++) {
-            printf("%d ", matriz[i][j]);
-        }
-    }
-}
-void multiMatrizes(int A[T][T], int resultado[T][T]) {
-    for (int i = 0; i < T; i++) {
-        for (int j = 0; j < T; j++) {
-            resultado[i][j] = 0; 
-            
-            for (int k = 0; k < T; k++) {
-                resultado[i][j] += A[i][k] * A[k][j];
-            }
-        }
-    }
+    return maior;
 }
 int main() {
-    int A[T][T];
-    int resultado[T][T];
-    
-    preencherMatriz(A);
-    multiMatrizes(A, resultado);
-
-    printf("A matriz A^2 eh:\n");
-    iMatriz(resultado);
-
-    return 0;
+    int N, k;
+    printf("Digite o tamanho do array: ");
+    scanf("%d", &N);
+    printf("Digite o numero de elementos por linha: ");
+    scanf("%d", &k);
+    int arr[N];
+    printf("Digite %d valores inteiros:\n", N);
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+    printf("Array: \n");
+    for (int i = 0; i < N; i++) {
+        printf("%d ", arr[i]);
+        if ((i + 1) % k == 0) {
+        }
+    }
+    int maior = encontrarMaior(arr, N);
+    printf("O maior valor do array e: %d\n", maior);
+ return 0;
 }
