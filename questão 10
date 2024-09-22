@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+    int numero[999],i,somar;
+    
+    do{
+       printf("digite um numero: ");
+       scanf("%d",&numero[i]);
+       
+       somar+=numero[i];
+       
+    }while(numero[i]>0);
+
+printf("a soma dos numeros digitados é: %d",somar);
+    return 0;
+    
+}
