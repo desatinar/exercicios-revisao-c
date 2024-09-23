@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define LINHAS 5
+#define COLUNAS 5
+#define MAX_NUM 99
+
+void gerarCartela(int cartela[LINHAS][COLUNAS]) {
+    int usados[MAX_NUM + 1] = {0};  
+    int i, j, num;
+
+    srand(time(NULL));  
+
+    for (i = 0; i < LINHAS; i++) {
+        for (j = 0; j < COLUNAS; j++) {
+            do {
+                num = rand() % (MAX_NUM + 1);
+            } while (usados[num]); 
+
+            cartela[i][j] = num;  
+            usados[num] = 1;  
+        }
+    }
+}
+
+void exibirCartela(int cartela[LINHAS][COLUNAS]) {
+    int i, j;
+
+    printf("Cartela de Bingo:\n");
+    for (i = 0; i < LINHAS; i++) {
+        for (j = 0; j < COLUNAS; j++) {
+            printf("%02d ", cartela[i][j]);  
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int cartela[LINHAS][COLUNAS];
+
+    gerarCartela(cartela);
+    exibirCartela(cartela);
+
+    return 0;
+}
+
