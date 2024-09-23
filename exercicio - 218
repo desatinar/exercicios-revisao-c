@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_NOME 15
+#define QUANTIDADE_PESSOAS 3
+
+
+struct Pessoa {
+    char nome[MAX_NOME + 1];  
+    int idade;
+};
+
+int main() {
+    struct Pessoa pessoas[QUANTIDADE_PESSOAS];
+
+    
+    for (int i = 0; i < QUANTIDADE_PESSOAS; i++) {
+        printf("Digite o nome da pessoa %d (máximo %d caracteres): ", i + 1, MAX_NOME);
+        fgets(pessoas[i].nome, sizeof(pessoas[i].nome), stdin);
+        
+        
+        pessoas[i].nome[strcspn(pessoas[i].nome, "\n")] = '\0';
+        
+        
+        if (strlen(pessoas[i].nome) > MAX_NOME) {
+            printf("Erro: nome excede o limite de %d caracteres. Tente novamente.\n", MAX_NOME);
+            i--; 
+            continue;
+        }
+
+        
+        printf("Digite a idade de %s: ", pessoas[i].nome);
+        scanf("%d", &pessoas[i].idade);
+        getchar();  
+    }
+
+    
+    printf("\nLista de pessoas:\n");
+    for (int i = 0; i < QUANTIDADE_PESSOAS; i++) {
+        printf("Nome: %s, Idade: %d\n", pessoas[i].nome, pessoas[i].idade);
+    }
+
+    return 0;
+}
+
+
+
