@@ -18,4 +18,7 @@ Luiz André
 Eduardo
 João Álvaro
 Anderson Dantas
+Davi Henrique
+Guilherme Santos
+Silvio Moisés
 ```
