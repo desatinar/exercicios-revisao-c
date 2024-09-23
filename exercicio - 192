@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    while (1) {  
+        char *vetor = (char *)malloc(1024);  
+        if (vetor == NULL) {
+            printf("Erro de alocação de memória.\n");
+            return 1;
+        }
+
+        
+        printf("Primeira posição: %d\n", vetor[0]);
+
+
+    }
+
+    return 0;
+}
