@@ -29,18 +29,18 @@ unsigned int exp(unsigned int base, unsigned int exponent) {
         unsigned int temp = exp(base, exponent - 1);
         if (temp > UINT_MAX / base) {
             status = 0;
-            return 0; // overflow
+            return 0; 
         }
         result *= temp;
         if (result < temp) {
             status = 0;
-            return 0; // overflow
+            return 0; 
         }
         status = 1;
         return result;
     } else {
         status = 0;
-        return 0; // expoente inválido
+        return 0; 
     }
 }
 
