@@ -21,6 +21,6 @@ Anderson Dantas
 Davi Henrique
 Guilherme Santos
 Silvio Moisés
-jose esdras
-
+José Esdras
+João Henry
 ```
